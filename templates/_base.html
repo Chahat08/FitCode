@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    {% block cssfiles %}{% endblock cssfiles %}
+
+    <title>{% block title %}FitCode{% endblock title %}</title>
+</head>
+<body>
+
+    <div class="container" id="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+    <footer>
+        <p class="text-muted">Made by Chahat Kalsi</p>
+    </footer>
+
+    {% block jsfiles %}{% endblock jsfiles %}
+
+</body>
+</html>
