@@ -1,3 +1,5 @@
 pipenv==2021.11.9
 django~=3.2.8
 psycopg2-binary==2.9.1
+django-crisy-forms==1.12.0
+environs[django]==9.3.4
