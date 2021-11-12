@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!--<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+
+    {% block cssfiles %}{% endblock cssfiles %}
+
+    <title>{% block title %}FitCode{% endblock title %}</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+</head>
+<body>
+    <!-- style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../static/img/bg_light.png');">-->
+
+
+    <header>
+        <!-- NAVBAR CONTENTS -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-image: linear-gradient(to right, rgb(192, 217, 225), rgb(208, 233, 208));">
+            <!--sticky top-->
+
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'img/FitCode-Logo_.png' %}" height="30" width="121" class="mx-4" alt="FitCode">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% if user.is_authenticated %}
+
+                <ul class="navbar-nav ms-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="https://img.icons8.com/ios-glyphs/30/000000/code.png" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url '#">
+                            <img width="30" height="30" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-text-twitter-flatart-icons-outline-flatarticons.png" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Problems</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <a href="#" type="button" class="btn btn-secondary">{{user.get_username}}</a>
+                            <a href="#" type="button" class="btn btn-outline-danger" data-bs-toggle="dropdown" aria-expanded="false" title="logout">
+                                <img width="20" hight="20" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png" />
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                {% else %}
+                <ul class="navbar-nav ms-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log-in</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" id="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+    <footer>
+        <!--<p class="text-muted">Made by Chahat Kalsi</p>-->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    {% block jsfiles %}{% endblock jsfiles %}
+
+</body>
+</html>

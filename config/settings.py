@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # mine
     'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +129,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# url we can use to refer to the dir where static files are stored
 STATIC_URL = '/static/'
+# all the different locations for storing static files in local dev
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+# where will all the files go in production (collectstatic command)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+# how exactly to look for these static files
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
