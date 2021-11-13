@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'problems',
+    'lists',
 ]
 
 MIDDLEWARE = [

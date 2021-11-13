@@ -29,6 +29,7 @@ urlpatterns = [
     #path('accounts/', include('accounts.urls')),
     path('', include('pages.urls')),
     path('problems/', include('problems.urls')),
+    path('', include('lists.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 # for synching media files with local

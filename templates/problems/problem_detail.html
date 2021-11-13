@@ -73,13 +73,15 @@
             </div>
         </div>
         <div class="col-sm border mh-100" id="text1">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="{{problem.youtube}}" allowfullscreen></iframe>
+            <div class="embed-responsive embed-responsive-16by9" style="overflow-y: scroll;">
+                <iframe name="displayPortion" class="embed-responsive-item" src="{{problem.youtube}}" allowfullscreen></iframe>
             </div>
+            <br />
+            <h4>Extra References: </h4>
             {% for url in urls %}
-            <a href="{{url}}">{{url}}</a>
+            <a class="btn btn-primary" href="{{url}}">Link {{ forloop.counter }}</a>
             {% endfor %}
-
+            <br />
         </div>
     </div>
     <div class="row">
