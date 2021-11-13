@@ -1,0 +1,47 @@
+[
+  {
+    "model": "problems.Problem",
+    "fields": {
+      "title": "Dining Philosophers Problem",
+      "subject": "Operating Systems",
+      "topic": "Process Synchronization",
+      "details": "Philosphers are dining around a table and they alternate between eating and thinking."
+    }
+  },
+  {
+    "model": "problems.Problem",
+    "fields": {
+      "title": "Create a Binary Search Tree",
+      "subject": "Data Structures",
+      "topic": "Binary Search Trees",
+      "details": "Created a Binary Search Tree."
+    }
+  },
+  {
+    "model": "problems.Problem",
+    "fields": {
+      "title": "Readers-Writers Problem",
+      "subject": "Operating Systems",
+      "topic": "Concurrency Management",
+      "details": "A classic concurrency management problem."
+    }
+  },
+  {
+    "model": "problems.Problem",
+    "fields": {
+      "title": "Dijkstra's Algorithm",
+      "subject": "Algorithms",
+      "topic": "Graph Theory",
+      "details": "Find the shortest distance to any given vertex from the source vertex in a graph."
+    }
+  },
+  {
+    "model": "problems.Problem",
+    "fields": {
+      "title": "Towers of Hanoi",
+      "subject": "Algorithms",
+      "topic": "Recursion",
+      "details": "Solve the historical mathematical problem of Towers of Hanoi."
+    }
+  }
+]
