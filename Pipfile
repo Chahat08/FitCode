@@ -11,6 +11,8 @@ environs = {version = "==9.3.4", extras = ["django"]}
 django-allauth = "==0.43.0"
 pillow = "==8.4.0"
 django-debug-toolbar = "==3.2.2"
+whitenoise = "==5.3.0"
+gunicorn = "*"
 
 [dev-packages]
 

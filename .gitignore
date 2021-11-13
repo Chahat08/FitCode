@@ -1,2 +1,5 @@
 .env
 .vs
+docker-compose-prod.yml
+__pycache__/
+db.sqlite3

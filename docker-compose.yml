@@ -3,7 +3,8 @@ version: '3.9'
 services:
   web:
     build: .
-    command: python /django/manage.py runserver 0.0.0.0:8000
+    # command: python /django/manage.py runserver 0.0.0.0:8000
+    command: gunicorn config.wsgi -b 0.0.0.0:8000
     volumes:
        - .:/django
     ports:
@@ -14,7 +15,15 @@ services:
        - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
        - "CODE_API_URL=${JUDGE_API_URL}"
        - "TEXT_API_URL=${TINY_API_URL}"
+       - "EMAIL_HOST_USER=${EMAIL_HOST_USER}"
+       - "EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}"
        - "DJANGO_DEBUG=True"
+       - "DJANGO_SECURE_SSL_REDIRECT=False"
+       - "DJANGO_SECURE_HSTS_SECONDS=0" 
+       - "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=False"
+       - "DJANGO_SECURE_HSTS_PRELOAD=False"
+       - "DJANGO_SESSION_COOKIE_SECURE=False"
+       - "DJANGO_CSRF_COOKIE_SECURE=False"
 
   db:
     image: postgres:13
