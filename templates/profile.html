@@ -13,28 +13,27 @@
 
                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                            <img src="{% static 'img/graphical.png' %}" class="img-fluid" alt="Sample image">
+                            <img src="{% static 'img/graphical.png' %}" class="img-fluid"alt="Sample image" height="100">
 
                         </div>
 
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                            <h2 class="text-center fw-bold  mx-1 mx-md-4 mt-4">{{user.get_username}}</h2>
-                            <h6 class="text-center text-muted mx-1 mx-md-4 mb-10">{{ user.email }}</h6>
+                                <h2 class="text-center fw-bold  mx-1 mx-md-4 mt-4">{{user.get_username}}</h2>
+                                <h6 class="text-center text-muted mx-1 mx-md-4 mb-10">{{ user.email }}</h6>
 
-                            <div class="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
-                                <a class="btn btn-primary text-center" href="{% url 'account_logout' %}">Logout</a>
-                            </div>
-                            <div class="d-flex justify-content-center mx-4 mb-3 mt-2 mb-lg-4">
-                                <a class="btn btn-primary text-center" href="{% url 'account_change_password' %}">Change Password</a>
-                            </div>
+                                <div class="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
+                                    <a class="btn btn-primary text-center" href="{% url 'account_logout' %}">Logout</a>
+                                </div>
+                                <div class="d-flex justify-content-center mx-4 mb-3 mt-2 mb-lg-4">
+                                    <a class="btn btn-primary text-center" href="{% url 'account_change_password' %}">Change Password</a>
+                                </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    </div>
 {% endblock content %}
-

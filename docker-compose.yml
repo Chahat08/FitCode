@@ -12,6 +12,7 @@ services:
        - db
     environment:
        - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
+       - "CODE_API_URL=${JUDGE_API_URL}"
        - "DJANGO_DEBUG=True"
 
   db:

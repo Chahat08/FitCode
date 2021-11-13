@@ -7,6 +7,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
+from environs import Env
+
+env=Env()
+env.read_env()
+
 # Create your views here.
 class ProblemListView(LoginRequiredMixin, ListView):
     model=Problem
@@ -25,6 +30,8 @@ def ProblemDetailView(request, uuid):
 
     new_comment = None
     
+    CODE_API = env('CODE_API_URL')
+
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -38,7 +45,8 @@ def ProblemDetailView(request, uuid):
     return render(request, template_name, {'problem': problem, 
                                            'comments': comments,
                                           'comment_form': comment_form,
-                                           'urls': urls
+                                           'urls': urls,
+                                           'code_url':CODE_API,
                                            })
 
 
