@@ -65,7 +65,7 @@
                     </li>
                     <li>
                         <div class="btn-group">
-                            <a href="#" type="button" class="btn btn-secondary">{{user.get_username}}</a>
+                            <a href="{% url 'profile' %}" type="button" class="btn btn-secondary">{{user.get_username}}</a>
                             <a href="{% url 'account_logout' %}" type="button" class="btn btn-outline-danger" data-bs-toggle="dropdown" aria-expanded="false" title="logout">
                                 <img width="20" hight="20" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png" />
                             </a>
