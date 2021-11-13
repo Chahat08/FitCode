@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block title %}Problems{% endblock title %}
+
+{% block content %}
+<a href="{% url 'problem_list' %}"><h1>Problems</h1></a>
+<div class="topic-buttons" style="margin: 20px 0 20px 0;">
+    <a href="{% url 'search_results' %}?q=data+structures" type="button" class="btn btn-outline-primary">Data Structures</a>
+    <a href="{% url 'search_results' %}?q=algorithms" type="button" class="btn btn-outline-success">Algorithms</a>
+    <a href="{% url 'search_results' %}?q=operating+systems" type="button" class="btn btn-outline-warning">Operating Systems</a>
+</div>
+<div class="card-deck">
+    {% for problem in problem_list %}
+    <div class="card" style="min-width: 15rem; max-width: 15rem; margin-bottom: 2em;">
+        {% if problem.header %}
+            <img class="card-img-top" src="{{problem.header.url}}" alt="{{problem.title}}">
+        {% endif %}
+
+        <div class="card-body d-flex flex-column">
+            <a href="{{ problem.get_absolute_url }}"><h5 class="card-title">{{ problem.title }}</h5></a>
+            <h6 class="card-subtitle mb-2 text-muted">{{ problem.topic }}</h6>
+            <p class="card-text">{{ problem.details }}</p>
+            <a href="{{problem.get_absolute_url}}" class="btn mt-auto btn-primary">Open Problem</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
