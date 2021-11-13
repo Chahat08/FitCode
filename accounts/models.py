@@ -3,6 +3,6 @@ from django.db import models
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    pass
+    avatar = models.ImageField(default='../static/img/default.png', upload_to='images/')
 
 
