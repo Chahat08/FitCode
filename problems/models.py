@@ -15,7 +15,8 @@ class Problem(models.Model):
     subject=models.CharField(max_length=200);
     topic=models.CharField(max_length=200);
     details=models.TextField(blank=True);
-    #header=models.ImageField(upload_to='headers/', blank=True)
+
+    header=models.ImageField(upload_to='headers/', blank=True)
 
     # link for youtube vid to be embedded
     youtube=models.URLField(blank=True)
