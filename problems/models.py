@@ -50,3 +50,16 @@ class Comment(models.Model):
 
     class Meta:
         ordering=['created']
+
+class ProblemURL(models.Model):
+
+    problem=models.ForeignKey(
+            Problem,
+            on_delete=models.CASCADE,
+            related_name='urls'
+        )
+
+    url=models.URLField()
+
+    def __str__(self):
+        return self.url
