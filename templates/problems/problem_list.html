@@ -5,11 +5,7 @@
 {% block content %}
     <h2>Problems</h2>
 
-    <div class="topic-buttons" style="margin: 20px 0 20px 0;">
-        <a href="{% url 'search_results' %}?q=data+structures" type="button" class="btn btn-outline-primary">Data Structures</a>
-        <a href="{% url 'search_results' %}?q=algorithms" type="button" class="btn btn-outline-success">Algorithms</a>
-        <a href="{% url 'search_results' %}?q=operating+systems" type="button" class="btn btn-outline-warning">Operating Systems</a>
-    </div>
+    
     <div class="card-deck">
         {% for problem in problem_list %}
         <div class="card wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s" style="min-width: 15rem; max-width: 15rem; margin-bottom: 2em;">
