@@ -1,0 +1,104 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block cssfiles %}
+<script src="https://cdn.tiny.cloud/1/u8209r0ntmg1olqna0mkwj2i0zo84ytiuwjmx167ntz518l1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<link rel="stylesheet" href="{% static 'css/style_tiny.css' %}" />
+<script src="{% static 'js/script_tiny.js' %}"></script>
+
+<style>
+    body {
+    background-color: #f7f6f6
+}
+
+.card {
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px
+}
+</style>
+{% endblock cssfiles %}
+
+{% block title %}{{ problem.title }}{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row" style="min-height: 0;">
+        <div class="col-sm border mh-100" style="overflow-y: scroll; min-height: 200px; /*background-image: url('../../static/img/bg1.png');*/">
+            <div class="position-absolute">
+                <div class="problem-detail" id="problem-detail">
+                    <h2 class="text-center font-weight-bold">{{ problem.title }}</h2>
+                    <p>Subject: {{ problem.subject }}</p>
+                    <p>Topic: {{ problem.topic }}</p>
+                    <p>Details: {{ problem.details }}</p>
+                    <!-- that stuff came here -->
+                    <!-- comments start-->
+                    <div class="col-sm-12 card mb-4  mt-3 ">
+                        <div class="card-body">
+                            <h4>Discussions <span class="font-weight-light" style="color: dimgray;">({{ comments.count }})</span></h4>
+                            {% for comment in comments %}
+                            <div class="comments" style="padding: 10px;">
+                                <p class="font-weight-bold">
+                                    {{ comment.author.username }} &nbsp;&nbsp;&nbsp;
+                                    <span class=" text-muted font-weight-normal">
+                                        {{ comment.created }}
+                                    </span>
+                                </p>
+                                {{ comment.comment | linebreaks }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--hehehe-->
+                    <div class="col-sm-12 card mb-4  mt-3">
+                        <div class="card-body">
+                            {% if new_comment %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment was posted successfully.
+                            </div>
+                            {% else %}
+                            <h3>Leave a comment</h3>
+                            <form method="post" style="margin-top: 1.3em;" id="myForm">
+                                {{ comment_form|crispy }}
+                                {% csrf_token %}
+                                <button name="comments_form" type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!--comments end-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm border mh-100" id="text1">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{problem.youtube}}" allowfullscreen></iframe>
+            </div>
+            {% for url in urls %}
+            <a href="{{url}}">{{url}}</a>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm border mh-100" id="tinymce">
+            <textarea id="open-source-plugins">
+            </textarea>
+        </div>
+        <div class="col-sm border mh-100" id="judgece">
+            <h1>
+                <iframe src="https://widgets.judge0.com?widgetId=AINZ8xbSJ8K6FT7Nzw18WMazpriD&theme=light&language=en" style="width: 100%; height: 15em; border: none;"></iframe>
+            </h1>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block jsfiles %}
+<script>
+    $('#myForm')[0].reset();
+</script>
+{% endblock jsfiles %}

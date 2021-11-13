@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .settings import DEBUG
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +28,16 @@ urlpatterns = [
     # for local apps
     #path('accounts/', include('accounts.urls')),
     path('', include('pages.urls')),
-]
+    path('problems/', include('problems.urls')),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+# for synching media files with local
+
+
+# for django-debug-toolbar
+if DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
+
