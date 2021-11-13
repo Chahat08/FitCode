@@ -31,6 +31,8 @@ def ProblemDetailView(request, uuid):
     new_comment = None
     
     CODE_API = env('CODE_API_URL')
+    TEXT_API = env('TEXT_API_URL')
+
 
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -47,6 +49,7 @@ def ProblemDetailView(request, uuid):
                                           'comment_form': comment_form,
                                            'urls': urls,
                                            'code_url':CODE_API,
+                                           'text_url':TEXT_API,
                                            })
 
 
