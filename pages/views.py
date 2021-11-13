@@ -10,3 +10,11 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 class ProfilePageView(LoginRequiredMixin, TemplateView):
     template_name='profile.html'
     login_url='account_login'
+
+class CodePageView(LoginRequiredMixin, TemplateView):
+    template_name='code.html'
+    login_url='account_login'
+
+class TextPageView(LoginRequiredMixin, TemplateView):
+    template_name='text.html'
+    login_url='account_login'
