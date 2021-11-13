@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # mine
     'accounts',
     'pages',
+    'problems',
 ]
 
 MIDDLEWARE = [
