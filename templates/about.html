@@ -1,0 +1,58 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}About FitCode{% endblock title %}
+
+{% block content %}
+
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                            <img src="{% static 'img/graphical.png' %}" class="img-fluid" alt="Sample image" height="100">
+
+                        </div>
+
+                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                            <h2 class="text-center fw-bold  mx-1 mx-md-4 mt-4">FitCode</h2>
+                            <h6 class="text-center text-muted mx-1 mx-md-4 mb-10">Empowering students through resources.</h6>
+
+                            <div class="d-flex justify-content-center mx-4 mb-2 mt-5 mb-lg-4">
+                                <p class="text-center">
+                                    FitCode is a platform created with the ultimate goal of helping students find the very best amongst all the resources available on the vast internet.
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
+                                <p class="text-center">
+                                    Often times we find ourselves looking for resources on a certain problem and end up spending hours and hours online clicking through links without finding that one nook of the internet which will clarify our concepts. 
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
+                                <p class="text-center">
+                                    The above describes my own experience as a student to a T. The resources presented in here are the ones which "solved the puzzle" for me. They are how the concepts finally clicked. FitCode is my way of sharing these with other students.
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
+                                <p class="text-center">
+                                    Finally, I do understand that what worked for me will not necessarily work for others. To that end, each problem has a discussions sections in which students are encouraged to ask doubts and share their own resources.
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
+                                <p class="text-center">
+                                    Thank you for using FitCode and Happy Coding!
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -2,14 +2,27 @@
 {% load crispy_forms_tags %}
 
 {% block title %}Home{% endblock title %}
-
+{% block cssfiles %}
+<style>
+</style>
+{% endblock cssfiles %}
 {% block content %}
-<h1>Fitcode Home</h1>
-{% if user.is_authenticated %}
-<h3>Hi, {{ user.username }}</h3>
-<a href="{% url 'account_logout' %}"><h3>Logout here</h3></a>
-{% else %}
-<a href="{% url 'account_login' %}"><h3>Login here</h3></a>
-<a href="{% url 'account_signup' %}"><h3>Sign Up here</h3></a>
-{% endif %}
+<div class="parallax-content baner-content" id="home">
+    <div class="container">
+        <div class="first-content">
+            <h1>FitCode</h1>
+            <span><em>Empowering Students</em> through Resources.</span>
+            {% if user.is_authenticated %}
+            <div class="primary-button">
+                <a href="{% url 'problem_list' %}">Problem List</a>
+            </div>
+            {% else %}
+            <div class="account-button">
+                <a href="{% url 'account_signup' %}" class="btn btn-outline-success">Sign up</a>
+                <a href="{% url 'account_login' %}" class="btn btn-outline-success">Log in</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock content %}

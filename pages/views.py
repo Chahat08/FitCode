@@ -8,12 +8,16 @@ env=Env()
 env.read_env()
 
 # Create your views here.
-class HomePageView(LoginRequiredMixin, TemplateView):
+class HomePageView(TemplateView):
     template_name='home.html'
-    login_url='account_login'
+    # login_url='account_login'
 
 class ProfilePageView(LoginRequiredMixin, TemplateView):
     template_name='profile.html'
+    login_url='account_login'
+
+class AboutPageView(LoginRequiredMixin, TemplateView):
+    template_name='about.html'
     login_url='account_login'
 
 @login_required(login_url='account_login')
