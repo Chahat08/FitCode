@@ -28,3 +28,25 @@ class Problem(models.Model):
 
     def get_absolute_url(self):
         return reverse('problem_detail', args=[str(self.id)])
+
+
+class Comment(models.Model):
+
+    problem=models.ForeignKey(
+            Problem,
+            on_delete=models.CASCADE,
+            related_name='comments'
+        )
+    comment=models.TextField()
+    author=models.ForeignKey(
+            get_user_model(),
+            on_delete=models.CASCADE
+        )
+    created = models.DateField(auto_now_add=True)
+    # active=models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.comment
+
+    class Meta:
+        ordering=['created']
