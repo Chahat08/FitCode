@@ -1,0 +1,8 @@
+{% extends '_base.html' %}
+{% block title %}Your Account{% endblock title %}
+
+{% block content %}
+<h1>{{user.get_username}}</h1>
+<a class="btn btn-primary" href="{% url 'account_logout' %}">Logout</a>
+<a class="btn btn-primary" href="{% url 'account_change_password' %}">Change your password here.</a>
+{% endblock content %}
