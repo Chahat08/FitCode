@@ -5,6 +5,7 @@ from .forms import CommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 # Create your views here.
 class ProblemListView(LoginRequiredMixin, ListView):
@@ -36,6 +37,21 @@ def ProblemDetailView(request, uuid):
 
     return render(request, template_name, {'problem': problem, 
                                            'comments': comments,
-                                           'comment_form': comment_form,
+                                          'comment_form': comment_form,
                                            'urls': urls
                                            })
+
+
+class SearchResultsListView(LoginRequiredMixin, ListView):
+    model=Problem
+    context_object_name='problem_list'
+    template_name='problems/search_results.html'
+    login_url='account_login'
+
+    def get_queryset(self):
+        query=self.request.GET.get('q')
+        return Problem.objects.filter(
+            Q(title__icontains=query)|
+            Q(subject__icontains=query)|
+            Q(topic__icontains=query)
+            ) 
