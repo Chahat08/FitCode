@@ -1,0 +1,131 @@
+body {
+    /*background: #F7FCF9;
+    color: #5973C6;*/
+    /*background-color: #E9F3ED;
+    background-image: url("../img/bg_dark.8cefbbb585a3.png");
+    font-family: 'Poppins', sans-serif;*/
+    font-size: 16px;
+    font-weight: 400;
+    overflow: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+    /*background-image: url("../img/bg_dark.8cefbbb585a3.png");*/
+}
+
+@media (min-width: 992px) {
+    .navbar li {
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+.header {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.bcg {
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/*div {
+    position: fixed;
+    width: 50%;
+    height: 50%
+}*/
+#problem-row {
+    height: 300px;
+}
+footer{
+    margin-top: 3em;
+    padding-top: 3em;
+}
+.primary-button a {
+    display: inline-block;
+    background-color: #ff7d27;
+    border: 2px solid transparent;
+    padding: 15px 24px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+    .primary-button a:hover {
+        background-color: transparent;
+        border-color: #ff7d27;
+    }
+
+.account-button a {
+    display: inline-block;
+    /*background-color: #ff7d27;*/
+    padding: 15px 24px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+
+.parallax-content {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+
+.baner-content {
+    padding-top: 30vh;
+    text-align: center;
+    background-image: radial-gradient(rgb(44,44,44,0.7),rgb(44,44,44,0)), url("../img/bg_light.65cf0fa46a65.png");
+}
+
+    .baner-content h1 {
+        margin-top: 0px;
+        font-size: 128px;
+        color: #fff;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+
+    .baner-content em {
+        color: #FFDAC2;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    .baner-content span {
+        display: inline-block;
+        margin-top: -20px;
+        font-weight: 300;
+        font-size: 48px;
+        color: #fff;
+    }
+
+    .baner-content .primary-button {
+        margin-top: 15px;
+    }
+
+    .baner-content .account-button {
+        margin-top: 15px;
+    }
