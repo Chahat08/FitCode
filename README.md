@@ -2,7 +2,7 @@
 ### _Empowering students through resources._
 
 <p align="center">
-  <img src="static/img/logo.png" width="350" title="FitCode">
+  <img src="static/img/logo.png" width="50" title="FitCode">
 </p>
 
 FitCode boasts of a platform where users can find a plethora of quality tried-and-tested resources on computer science related fields; and code, take notes and discuss them, all at one place.
