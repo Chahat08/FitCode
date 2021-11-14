@@ -20,6 +20,10 @@ FitCode has been deployed via [Heroku](https://dashboard.heroku.com/). Click on 
 - Concepts still not clear? Worry not, the discussion section will let you post your doubts and ask other users for help!
 - Clean and distraction free UI.
 
+## Screenshots
+![home](https://github.com/Chahat08/FitCode/blob/main/screenshots/home.png)
+*FitCode Home*
+
 ## Database
 
 The website utitiles a Postgresql database in the backend.
