@@ -21,8 +21,18 @@ FitCode has been deployed via [Heroku](https://dashboard.heroku.com/). Click on 
 - Clean and distraction free UI.
 
 ## Screenshots
-![home](https://github.com/Chahat08/FitCode/blob/main/screenshots/home.png)
-*FitCode Home*
+<p>
+  <img src="screenshots/home.png" width="150" title="home">
+  <em>FitCode Home</em>
+  <img src="screenshots/problemList.png" width="150" title="list">
+  <em>Problem List. You can search the database using the form in the navbar too.</em>
+  <img src="screenshots/problemDetail.png" width="150" title="details">
+  <em>Problem Details Page. You can watch the video, discuss in the comments section, take notes and code all in one page!</em>
+  <img src="screenshots/code.png" width="150" title="details">
+  <em>A code editor, powered by Jugde0!</em>
+  <img src="screenshots/text.png" width="150" title="details">
+  <em>A text editor, run by TinyMCE!</em>
+</p>
 
 ## Database
 
