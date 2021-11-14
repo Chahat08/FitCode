@@ -2,7 +2,7 @@
 ### _Empowering students through resources._
 
 <p align="left">
-  <img src="static/img/logo.png" width="50" title="FitCode">
+  <img src="static/img/logo.png" width="100" title="FitCode">
   <img src="static/img/FitCode-Logo_.png" title="FitCode">
 </p>
 
